@@ -87,6 +87,7 @@ def grafica_gen(y):
     Gens = ["Gen 1","Gen 2","Gen 3","Gen 4","Gen 5","Gen 6","Gen 7","Gen 8","Gen 9"]
     Colores = ["#f0544f","#f4faa2","#57f04f","#b5a7b8","#6e6d6d","#f097da","#77f2d7","#d1ed34","#5c2b08"]
     plt.pie(y,labels = Gens,autopct = '%1.1f%%',colors=Colores,rotatelabels = True, wedgeprops = {"linewidth": 1, "edgecolor": "white"})
+    plt.savefig("Distribucion de Pokémon por generacion.jpg")
     plt.show()
 
 def grafica_stats(y):
@@ -94,9 +95,16 @@ def grafica_stats(y):
     y=np.array(y)
     colores=["#fcfc00" , "#db0909" , "#2311c2" , "#e3620b" , "#561ca3" , "#03fbff"]
     plt.bar(x , y ,color = colores)
+    plt.savefig("Estadisticas del Pokemon.jpg")
     plt.show()
 
-
+def grafica_tipos (y):
+    tipos =["Normal","Lucha","Volador","Veneno","Tierra","Roca","Bicho","Fantasma","Acero","Fuego","Agua","Planta","Electrico","Psiquico","Hielo","Dragon","Siniestro","Hada"]
+    Colores = ["#e6e6fa","#b22222","#8fcbeb","#9370db","#deb887","#cd853f","#9acd32","#800080","#d3d3d3","#dc143c","#4169e1","#32cd32","#ffff00","#7f00ff","#7fffd4","#7b68ee","#708090","#ff88ee"]
+    plt.pie(y , labels = tipos , autopct = '%1.1f%%',colors = Colores , rotatelabels = True, wedgeprops = {"linewidth": 1, "edgecolor": "white"})
+    plt.title("Distribución de Pokemon por tipos")
+    plt.savefig("Distribución de Pokemon por tipos.jpg",)
+    plt.show()
 
 
 print("Bienvenido a la Api de Pokemon.")
